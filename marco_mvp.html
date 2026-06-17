@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8">
+    <title>Marco Zero</title>
+    <link rel="stylesheet" href="marco.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+     <!-- Bootstrap Icons -->
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" rel="stylesheet">
+    </head>
+  <body>
+    <header>
+        <!-- logo -->
+      <span class="logo"><img src="logo.png" alt="Logo" width="50" height="50"> 
+        <img src="nome.png" alt="Nome" width="100" height="50">
+      </span>
+     <!-- barra de pesquisa -->
+      <div class="right-area">
+
+       <div class="search-box">
+         <i class="bi bi-search lupa"></i>
+
+         <input type="text" id="pesquisa" placeholder="Pesquisar lojas..." onkeyup="buscar()">
+         <button class="btn-filtro" onclick="toggleFiltro()"> <i class="bi bi-funnel-fill"></i> </button>
+       </div>
+
+      <nav>
+        <ul class="nav">
+          <li><a href="#" onclick="toggleMenu()"><img src="menu.png" alt="Menu" width="40" height="40"></a></li>
+        </ul>
+      </nav>
+      </div>
+    
+    </header>
+    <div id="menu-lateral">
+
+  <a href="marco_mvp.html"> Página Inicial</a>
+
+  <a href="#" onclick="abrirWhatsApp()">
+     Cadastrar Minha Loja
+  </a>
+
+  <a href="#" onclick="abrirWhatsAppContato()">
+     Contato
+  </a>
+
+</div>
+    <ul id="lista" class="lista">
+      <li onclick="irPara('lojaa.html')">Achadinhos da Cleia</li>
+      <li onclick="irPara('lojab.html')">Marmitinha da Chaguinha</li>
+      <li onclick="irPara('lojac.html')">Sorveteria e Açaiteria Eli</li>
+      <li onclick="irPara('lojad.html')">Patrícia Modas</li>
+    </ul>
+
+    <!-- filtro -->
+ <div class="filtros" id="painel-filtro">
+  <button onclick="filtrar('todas')">Todas</button>
+  <button onclick="filtrar('comida')">Alimentação</button>
+  <button onclick="filtrar('beleza')">Beleza</button>
+  <button onclick="filtrar('roupa')">Moda</button>
+ </div>
+
+ <section class="banner-marcozero">
+  <img src="Catálogo de Produtos Luxo Moderno Creme e Verde Apresentação (1880 x 1080 px) (1).png" alt="Marco Zero">
+  
+  <div class="banner-texto">
+    <h1>Bem-vindo ao Marco Zero</h1>
+    <p>
+      Encontre as melhores lojas, promoções e serviços da sua cidade em um só lugar.
+    </p>
+
+    <a href="#lojas">
+      <button>Explorar Lojas</button>
+    </a>
+  </div>
+
+</section>
+
+<div class="promocoes-container" id="promo">
+
+  <button class="seta-promocao" onclick="moverPromocoes(-1)">
+    ❮
+  </button>
+
+  <div class="promocoes-galeria" id="promocoes-galeria">
+
+    <div class="card-promocao">
+      <img src="promo (1).jpeg" alt="Promoção 1">
+    </div>
+
+    <div class="card-promocao">
+      <img src="promo (2).jpeg" alt="Promoção 2">
+    </div>
+
+  </div>
+
+  <button class="seta-promocao" onclick="moverPromocoes(1)">
+    ❯
+  </button>
+
+</div>
+
+ <div class="titulo-secao" id="lojas">
+    <h2>Lojas em destaque</h2>
+    <p>As lojas mais visitadas da cidade</p>
+</div>
+
+<main class="lojas-container">
+
+  <div class="loja" id="A">
+    <img src="cleialogo.jpeg" alt="Logo Achadinhos da Cleia">
+    <h3>Achadinhos da Cleia</h3>
+    <p>Aqui você encontra o que precisa!</p>
+    <a href="lojaa.html" ><button onclick="verLoja('Loja A')">Ver mais</button></a>
+  </div>
+
+  <div class="loja" id="B">
+    <img src="caguilogo (1).jpeg" alt="Logo chaguinha">
+    <h3>Marmitinha da Chaguinha</h3>
+    <p>Aqui você encontra o que precisa!</p>
+    <a href="lojab.html" ><button onclick="verLoja('Loja B')">Ver mais</button></a>
+  </div>
+
+  <div class="loja" id="C">
+    <img src="elilogo.jpeg" alt="Logo eli">
+    <h3>Sorveteria e Açaiteria Eli</h3>
+    <p>Aqui você encontra o que precisa!</p>
+    <a href="lojac.html" ><button onclick="verLoja('Loja C')">Ver mais</button></a>
+  </div>
+
+  <div class="loja" id="D">
+    <img src="pmlogo.jpeg" alt="Loja D">
+    <h3>Patrícia Modas</h3>
+    <p>Aqui você encontra o que precisa</p>
+    <a href="lojad.html" ><button onclick="verLoja('Loja D')">Ver mais</button></a>
+  </div>
+
+</main>
+
+<section class="novidades">
+
+  <div class="titulo-secao">
+    <h2>Novidades</h2>
+    <p>Confira as últimas novidades das lojas</p>
+  </div>
+
+  <div class="novidades-wrapper">
+
+    <button class="seta-novidade seta-esquerda" onclick="moverNovidades(-1)">❮</button>
+    <div class="novidades-galeria" id="novidades-galeria">
+    <a href="lojaa.html" class="link-novid">  
+      <div class="novidade-card">
+        <img src="cleia2 (2).jpeg" alt="Novidade 1">
+        <div class="conteudo-novidade">
+          <h3>Achadinhos da Cleia</h3>
+          <p>Confira as novidades da semana.</p></div>
+      </div>
+    </a>
+
+    <a href="lojab.html" class="link-novid">
+      <div class="novidade-card">
+        <img src="chaguinha (1).jpeg" alt="Novidade 2">
+        <div class="conteudo-novidade">
+          <h3>Marmitinha da Chaguinha</h3>
+          <p>Promoção especial de marmitas durante toda a semana.</p></div>
+      </div>
+    </a>
+
+    <a href="lojac.html" class="link-novid">
+      <div class="novidade-card">
+        <img src="eli (11).jpeg" alt="Novidade 3">
+        <div class="conteudo-novidade">
+          <h3>Sorveteria Eli</h3>
+          <p>Novos sabores de açaí e sorvetes disponíveis.</p></div>
+      </div>
+    </a>
+
+    <a href="lojad.html" class="link-novid">
+      <div class="novidade-card">
+        <img src="pm (5).jpeg" alt="Novidade 4">
+        <div class="conteudo-novidade">
+          <h3>Patrícia Modas</h3>
+          <p>As melhores peças para a copa você encontra aqui.</p></div>
+      </div>
+    </a>
+    </div>
+
+    <button class="seta-novidade seta-direita" onclick="moverNovidades(1)">❯</button>
+  </div>
+
+</section>
+
+<section class="loja-semana">
+
+  <div class="loja-semana-img">
+    <img src="pmlogo.jpeg" alt="Patrícia Modas">
+  </div>
+
+  <div class="loja-semana-info">
+
+    <span class="destaque-semana">
+      ⭐ Loja da Semana
+    </span>
+
+    <h2>Patrícia Modas</h2>
+
+    <p>
+      Destaque da semana por oferecer variedade, qualidade e excelente atendimento.
+      Confira as novidades e promoções exclusivas disponíveis nesta semana.
+    </p>
+
+    <a href="lojad.html">
+      <button>Visitar Loja</button>
+    </a>
+
+  </div>
+
+</section>
+
+<section class="porque-marcozero">
+
+  <div class="titulo-secao">
+    <h2>Por que usar o Marco Zero?</h2>
+    <p>Conectando pessoas aos negócios locais de Varjota</p>
+  </div>
+
+  <div class="vantagens-container">
+
+    <div class="vantagem-card">
+      <i class="bi bi-shop"></i>
+      <h3>Valorize o comércio local</h3>
+      <p>Descubra lojas, serviços e produtos da sua cidade em um só lugar.</p>
+    </div>
+
+    <div class="vantagem-card">
+      <i class="bi bi-geo-alt-fill"></i>
+      <h3>Encontre com facilidade</h3>
+      <p>Localize rapidamente os estabelecimentos e trace rotas até eles.</p>
+    </div>
+
+    <div class="vantagem-card">
+      <i class="bi bi-star-fill"></i>
+      <h3>Avaliações reais</h3>
+      <p>Veja opiniões de outros clientes antes de visitar uma loja.</p>
+    </div>
+
+    <div class="vantagem-card">
+      <i class="bi bi-phone-fill"></i>
+      <h3>Contato direto</h3>
+      <p>Fale diretamente com os estabelecimentos e com o suporte.</p>
+    </div>
+
+  </div>
+
+</section>
+
+<footer class="rodape">
+
+  <div class="rodape-container">
+
+    <div class="rodape-coluna">
+      <img src="logomz.jpeg" alt="Logo" width="60">
+      <h3>Marco Zero</h3>
+      <p>
+        Conectando consumidores aos pequenos negócios locais de Varjota.
+      </p>
+    </div>
+
+    <div class="rodape-coluna">
+      <h4>Links Rápidos</h4>
+
+      <a href="#">Início</a>
+      <a href="#lojas">Lojas</a>
+      <a href="#promo">Promoções</a>
+      <a href="#" onclick="abrirWhatsAppContato()">Contato</a>
+    </div>
+
+    <div class="rodape-coluna">
+      <h4>Contato</h4>
+
+      <p>
+        <i class="bi bi-whatsapp"></i>
+        (88) 9449-5461
+      </p>
+
+      <p>
+        <i class="bi bi-envelope"></i>
+        contato@marcozero.com
+      </p>
+    </div>
+
+    <div class="rodape-coluna">
+      <h4>Redes Sociais</h4>
+
+      <div class="redes">
+        <a href="#"><i class="bi bi-instagram"></i></a>
+        <a href="#"><i class="bi bi-facebook"></i></a>
+        <a href="#"><i class="bi bi-whatsapp"></i></a>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="rodape-copy">
+    © 2026 Marco Zero - Todos os direitos reservados.
+  </div>
+
+</footer>
+
+<!-- java externo -->
+   <script src="marco.js"></script>
+  </body>
+</html>

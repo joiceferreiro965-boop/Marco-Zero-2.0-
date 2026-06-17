@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="marco.css">
+    <title>Marco Zero Login</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body{
+            background-color:#f5f5f5;
+        }
+
+        .header-login{
+            background:#121A25;
+            padding:15px 30px;
+            display:flex;
+            align-items:center;
+        }
+
+        .logo{
+            display:flex;
+            align-items:center;
+            gap:10px;
+        }
+
+        .escolha-container{
+            display:flex;
+            flex-direction:column;
+            align-items:center;
+            justify-content:center;
+            margin-top:80px;
+        }
+
+        .foto-usuario{
+            font-size:120px;
+            color:#121A25;
+            margin-bottom:20px;
+        }
+
+        .escolha-container h1{
+            color:#121A25;
+            margin-bottom:30px;
+        }
+
+        .btn-escolha{
+         width: 250px;
+         height: 45px;
+         background-color: #121A25 ;
+         color: white ;
+         margin: 12px 0;
+         border: none ;
+         border-radius: 30px ;
+         font-size: 18px;
+         cursor: pointer;
+        }
+
+        .btn-escolha:hover{
+          background-color: #6090d7;
+         color: white;
+        }
+
+        .form-login{
+            display:none;
+            margin-top:20px;
+            width:250px;
+            flex-direction: column;
+            gap: 10px;
+        }
+        
+        .form-login input{
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            font-size: 15px;
+        }
+        
+        .btn-entrar{
+            background: #121A25;
+            color: white;
+            border: none;
+            border-radius: 30px;
+            padding: 12px;
+            cursor: pointer;
+        }
+
+        .btn-entrar:hover{
+            background: #6090d7;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <header class="header-login">
+        <div class="logo">
+            <img src="logo.png" alt="Logo" width="50">
+            <img src="nome.png" alt="Marco Zero" width="120">
+        </div>
+    </header>
+
+    <main class="escolha-container">
+
+        <div class="foto-usuario">
+            <i class="bi bi-person-circle"></i>
+        </div>
+
+        <h1>Login</h1>
+
+      <button id="btn-usuario" class="btn-escolha" onclick="mostrarLogin()">Sou Usuário</button>
+      <a href="https://wa.me/558894495461?text=Olá!%20Gostaria%20de%20cadastrar%20minha%20loja%20no%20Marco%20Zero."
+   target="_blank"><button id="btn-loja" class="btn-escolha" onclick="abrirwhats()"> Cadastrar Minha Loja </button></a>       
+       <div id="form-login" class="form-login">
+        <input type="text" placeholder="Nome de usuário">
+        <input type="password" placeholder="Senha">
+        <button class="btn-entrar" onclick="entrar()"> Entrar </button>
+       </div>
+    </main>
+
+    <script>
+    function mostrarLogin(){
+
+    document.getElementById("btn-usuario").style.display = "none";
+    document.getElementById("btn-loja").style.display = "none";
+
+    let formulario = document.getElementById("form-login");
+
+    formulario.style.display = "flex";
+    }
+
+    function entrar(){
+        window.location.href= "marco_mvp.html";
+    }
+
+    </script>
+
+</body>
+</html>

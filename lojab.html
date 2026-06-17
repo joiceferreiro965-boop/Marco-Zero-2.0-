@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marco Zero</title>
+    <link rel="stylesheet" href="lojaa.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <!-- logo -->
+      <span class="logo"><img src="logo.png" alt="Logo" width="50" height="50"> 
+        <img src="nome.png" alt="Nome" width="100" height="50">
+      </span>
+     <!-- barra de pesquisa -->
+      <div class="right-area">
+       <div class="search-box">
+       <i class="bi bi-search lupa"></i>
+       <input type="text" id="pesquisa" placeholder="Pesquisar..." onkeypress="if(event.key === 'Enter') buscar()">
+          </div>
+
+      <nav>
+       <ul class="nav">
+         <li> <a href="#" onclick="toggleMenu()"><img src="menu.png" alt="Menu" width="40" height="40"></a></li>
+       </ul>
+      </nav>
+      </div>
+    
+    </header>
+
+    <div id="menu-lateral">
+     <a href="marco_mvp.html">Página Inicial</a>
+     <a href="#" onclick="abrirWhatsApp()">Cadastrar Minha Loja</a>
+     <a href="#" onclick="abrirWhatsAppContato()">Contato</a>
+    </div>
+
+    <ul id="lista" class="lista">
+      <li onclick="irPara('lojaa.html')">Achadinhos da Cleia</li>
+      <li onclick="irPara('lojab.html')">Marmitinha da Chaguinha</li>
+      <li onclick="irPara('lojac.html')">Sorveteria e Açaoteria Eli</li>
+      <li onclick="irPara('lojad.html')">Patrícia Modas</li>
+    </ul>
+
+
+  <a href="marco_mvp.html" class="voltar-btn"><i class="bi bi-arrow-left"></i> Voltar</a>
+<div class="topo-loja">
+  <img src="caguilogo (1).jpeg" class="logo-loja" alt="Marmitinha da Chaguinha">
+
+  <div class="info-loja">
+    <h1>Marmitinha da Chaguinha</h1>
+    <h3 class="subtitulo-endereco"><i class="bi bi-geo-alt-fill"></i>Rua Ariana Rodrigues, 50 - Progresso, Hidrolândia/CE</h3>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipiscing elit.<br>
+      Dolor sit amet consectetur adipiscing elit <br>
+      quisque faucibus
+    </p>
+
+    <a target="_blank" href="https://maps.app.goo.gl/WvLiLn3K4yNT8DjCA">
+      <button class="btn-loja" >Começar rota</button></a>
+  </div>
+
+</div><h2 class="titulo-galeria">Produtos da Loja</h2>
+
+<div class="galeria-container">
+
+  <button class="seta" onclick="moverGaleria(-1)">
+    ❮
+  </button>
+
+  <div class="galeria" id="galeria">
+    <img src="chaguinha (1).jpeg" alt="Produto 1" style="width:280px; height:280px; object-fit:cover; border-radius:10px;">
+    <img src="chaguinha (2).jpeg" alt="Produto 2" style="width:280px; height:280px; object-fit:cover; border-radius:10px;">
+  </div>
+
+  <button class="seta" onclick="moverGaleria(1)">
+    ❯
+  </button>
+
+</div>
+
+<div class="avaliacoes-container">
+
+  <div class="avaliacao">
+     <div class="estrelas">
+       <i class="bi bi-star-fill"></i>
+       <i class="bi bi-star-fill"></i>
+       <i class="bi bi-star-fill"></i>
+       <i class="bi bi-star-fill"></i>
+       <i class="bi bi-star-fill"></i>
+      </div>    
+   <h4>Usuário A</h4>
+    <p>Lorem ipsum dolor sit amet...</p>
+  </div>
+
+  <div class="avaliacao">
+    <div class="estrelas">
+      <i class="bi bi-star-fill"></i>
+      <i class="bi bi-star-fill"></i>
+      <i class="bi bi-star-fill"></i>
+      <i class="bi bi-star-fill"></i>
+      <i class="bi bi-star-fill"></i>
+   </div>
+    <h4>Usuário B</h4>
+    <p>Lorem ipsum dolor sit amet...</p>
+  </div>
+
+  <div class="avaliacao">
+    <div class="estrelas">
+      <i class="bi bi-star-fill"></i>
+      <i class="bi bi-star-fill"></i>
+      <i class="bi bi-star-fill"></i>
+      <i class="bi bi-star-fill"></i>
+      <i class="bi bi-star-fill"></i>
+    </div>
+    <h4>Usuário C</h4>
+    <p>Lorem ipsum dolor sit amet...</p>
+  </div>
+
+</div>
+
+<script>
+
+function buscar(){
+
+  let input =
+  document.getElementById("pesquisa")
+  .value
+  .toLowerCase();
+
+  let lista =
+  document.getElementById("lista");
+
+  let itens =
+  lista.querySelectorAll("li");
+
+  let encontrou = false;
+
+  itens.forEach(item => {
+
+    let texto =
+    item.innerText.toLowerCase();
+
+    if(texto.includes(input) && input !== ""){
+
+      item.style.display = "block";
+
+      encontrou = true;
+
+    }else{
+
+      item.style.display = "none";
+
+    }
+
+  });
+
+  lista.style.display =
+  encontrou ? "block" : "none";
+}
+
+function irPara(pagina){
+
+  window.location.href = pagina;
+}
+
+function toggleMenu(){
+
+  let menu =
+  document.getElementById("menu-lateral");
+
+  menu.classList.toggle("ativo");
+}
+
+function abrirWhatsApp(){
+
+  let numero = "558894495461";
+
+  let mensagem =
+  "Olá! Gostaria de cadastrar minha loja no Marco Zero.";
+
+  let url =
+  "https://wa.me/" +
+  numero +
+  "?text=" +
+  encodeURIComponent(mensagem);
+
+  window.open(url, "_blank");
+}
+
+function abrirWhatsAppContato(){
+
+  let numero = "558894495461";
+
+  let mensagem =
+  "Olá! Gostaria de falar com o suporte do Marco Zero.";
+
+  let url =
+  "https://wa.me/" +
+  numero +
+  "?text=" +
+  encodeURIComponent(mensagem);
+
+  window.open(url, "_blank");
+}
+
+function moverGaleria(direcao){
+
+  let galeria =document.getElementById("galeria");
+  galeria.scrollLeft += direcao * 250;
+}
+
+</script>
+
+</body>
+</html>
